@@ -1,0 +1,44 @@
+{% extends 'base.html' %}
+
+{% load crispy_forms_tags %}
+{% block content %}
+    <div class="card mt-4 bg bg-white form-group mx-auto my-auto">
+        <div class="card-topshadow">
+     
+            <p class="mrx-10 text-monospace font-weight-bold fs-5">ADD BOOK</p>
+      
+          </div>
+          <br>
+        <form method="post" enctype="multipart/form-data">
+            {% csrf_token %}
+            <div class="row mx-4">
+                <div class="col-6">
+                    {{ form.title|as_crispy_field }}
+                  </div>
+                  <div class="col-6">
+                    {{ form.author|as_crispy_field }}
+                  </div>
+                  <div class="col-6">
+                    {{ form.isbn|as_crispy_field }}
+                  </div>
+                  <!-- <div class="col-6">
+                    {{ form.publication_date }}
+                  </div> -->
+                  <div class="col-6">
+                    {{ form.genre|as_crispy_field }}
+                  </div>
+                  <div class="col-6">
+                    {{ form.quantity|as_crispy_field }}
+                  </div>
+                  <div class="col-6">
+                    {{ form.image|as_crispy_field }}
+                  </div>
+            </div>
+            <br>
+
+            <center><input class="btn btn-success" type="submit" value="Submit"/></center>
+            <br>
+            <br>
+        </form>
+    </div>
+{% endblock %}
