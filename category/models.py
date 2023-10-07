@@ -19,6 +19,7 @@ class Book(models.Model):
     isbn=models.CharField(max_length=13)
     publication_date=models.DateField(null=True,auto_now_add=True)
     genre=models.CharField(max_length=100)
+    avialability=models.BooleanField(default=False)
     quantity=models.PositiveIntegerField(default=0)
     image = models.ImageField(upload_to=get_User_file_path,default='uploads/default.png',)
 
